@@ -2,99 +2,223 @@ from fastapi import FastAPI, Header, HTTPException, Request
 from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
+import os
 
 app = FastAPI(title="Escudo Digital Pro - Seguridad Máxima")
-API_KEY = "mi_clave_secreta_123" 
 
-# Estructuras de control y memoria
+# VARIABLES SEGURAS DESDE RENDER
+API_KEY = os.getenv("API_KEY")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+
+# MEMORIA TEMPORAL
 ips_bloqueadas = {}
 intentos = {}
 
-# --- FUNCIONES DE PROTECCIÓN Y ALERTA ---
+# ==============================
+# REGISTRO DE EVENTOS
+# ==============================
 
 def registrar_evento(ip, navegador, mensaje):
-    """Registra antecedentes técnicos en el archivo de logs [3, 4]"""
     with open("logs.txt", "a", encoding="utf-8") as f:
-        f.write(f"{datetime.now()} | IP: {ip} | DISPOSITIVO: {navegador} | EVENTO: {mensaje}\n")
-
-def enviar_alertas_criticas(ip, navegador):
-    """Envía alertas inmediatas cuando se detecta un ataque [2]"""
-    remitente = "f.cerdaleyton@gmail.com" # Debes configurar esto
-    mensaje_mail = MIMEText(f"¡ALERTA CRÍTICA! Intento de vulneración detectado.\nIP: {ip}\nDispositivo: {navegador}\nEstado: BLOQUEADO DE RAÍZ.")
-    mensaje_mail["Subject"] = "ESCUDO DIGITAL: Bloqueo de Seguridad Activado"
-    
-    # Aquí se integraría la alerta al teléfono (SMS) en el futuro
-    print(f"ALERTA TELEFÓNICA: Intento de acceso sospechoso desde {ip}")
-
-    try:
-        # Esto requiere una 'Contraseña de Aplicación' de Google
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as servidor:
-            servidor.login(remitente, "sxlpverdyxhbxwhq")
-            servidor.sendmail(remitente, remitente, mensaje_mail.as_string())
-    except:
-        print("Aviso: Alerta de correo no enviada (falta configuración)")
-
-def verificar_seguridad(request: Request, x_api_key: str = Header(None)):
-    """Motor principal de rastreo y bloqueo [5, 6]"""
-    ip = request.client.host
-    navegador = request.headers.get("user-agent") # Rastreo de identidad del dispositivo
-
-    # 1. Verificación de Bloqueo previo
-    if ip in ips_bloqueadas:
-        registrar_evento(ip, navegador, "INTENTO DE ACCESO POST-BLOQUEO (SIGILOSO)")
-        raise HTTPException(
-            status_code=403, 
-            detail="ACCESO DENEGADO: El sistema ha bloqueado su conexión DESDE LA RAÍZ por actividad sospechosa. "
-                   "Si es usted el propietario, CAMBIE SU PASSWORD DE INMEDIATO."
+        f.write(
+            f"{datetime.now()} | "
+            f"IP: {ip} | "
+            f"DISPOSITIVO: {navegador} | "
+            f"EVENTO: {mensaje}\n"
         )
 
-    # 2. Verificación de Clave (API KEY)
+# ==============================
+# ALERTAS CRÍTICAS
+# ==============================
+
+def enviar_alertas_criticas(ip, navegador):
+
+    remitente = "f.cerdaleyton@gmail.com"
+
+    mensaje = MIMEText(
+        f"""
+ALERTA CRÍTICA DEL ESCUDO DIGITAL
+
+IP DETECTADA:
+{ip}
+
+DISPOSITIVO:
+{navegador}
+
+ESTADO:
+BLOQUEADO AUTOMÁTICAMENTE
+
+RECOMENDACIÓN:
+Revisar actividad sospechosa inmediatamente.
+"""
+    )
+
+    mensaje["Subject"] = "ESCUDO DIGITAL - ALERTA CRÍTICA"
+    mensaje["From"] = remitente
+    mensaje["To"] = remitente
+
+    try:
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as servidor:
+            servidor.login(remitente, EMAIL_PASSWORD)
+            servidor.sendmail(
+                remitente,
+                remitente,
+                mensaje.as_string()
+            )
+
+        print(f"[ALERTA] Correo enviado por amenaza desde {ip}")
+
+    except Exception as e:
+        print(f"[ERROR EMAIL] {e}")
+
+# ==============================
+# MOTOR DE SEGURIDAD
+# ==============================
+
+def verificar_seguridad(
+    request: Request,
+    x_api_key: str = Header(None)
+):
+
+    # DETECTAR IP REAL
+    forwarded = request.headers.get("x-forwarded-for")
+
+    if forwarded:
+        ip = forwarded.split(",")[0].strip()
+    else:
+        ip = request.client.host
+
+    navegador = request.headers.get("user-agent", "DESCONOCIDO")
+
+    # ==========================
+    # IP BLOQUEADA
+    # ==========================
+
+    if ip in ips_bloqueadas:
+
+        registrar_evento(
+            ip,
+            navegador,
+            "INTENTO POST-BLOQUEO"
+        )
+
+        raise HTTPException(
+            status_code=403,
+            detail="ACCESO DENEGADO POR SEGURIDAD"
+        )
+
+    # ==========================
+    # API KEY INCORRECTA
+    # ==========================
+
     if x_api_key != API_KEY:
+
         intentos[ip] = intentos.get(ip, 0) + 1
-        registrar_evento(ip, navegador, f"FALLO DE AUTENTICACIÓN #{intentos[ip]}")
-        
+
+        registrar_evento(
+            ip,
+            navegador,
+            f"FALLO AUTENTICACIÓN #{intentos[ip]}"
+        )
+
+        # BLOQUEO AUTOMÁTICO
         if intentos[ip] >= 3:
+
             ips_bloqueadas[ip] = True
-            registrar_evento(ip, navegador, "!!! IP LOCALIZADA Y BLOQUEADA DE RAÍZ !!!")
-            enviar_alertas_criticas(ip, navegador) # Dispara las alertas al teléfono/correo
-        
-        raise HTTPException(status_code=401, detail="Credenciales inválidas")
 
-    # 3. Acceso Correcto
+            registrar_evento(
+                ip,
+                navegador,
+                "IP BLOQUEADA AUTOMÁTICAMENTE"
+            )
+
+            enviar_alertas_criticas(ip, navegador)
+
+        raise HTTPException(
+            status_code=401,
+            detail="CREDENCIALES INVÁLIDAS"
+        )
+
+    # RESET SI AUTENTICA
     intentos[ip] = 0
-    registrar_evento(ip, navegador, "ACCESO EXITOSO")
 
-# --- RUTAS DE ACCESO (ENDPOINTS) ---
+    registrar_evento(
+        ip,
+        navegador,
+        "ACCESO EXITOSO"
+    )
+
+# ==============================
+# RUTAS
+# ==============================
 
 @app.get("/")
-def inicio(request: Request, x_api_key: str = Header(None)):
+def inicio(
+    request: Request,
+    x_api_key: str = Header(None)
+):
+
     verificar_seguridad(request, x_api_key)
-    return {"mensaje": "Escudo Digital Activo y Protegiendo"}
+
+    return {
+        "mensaje": "Escudo Digital Activo"
+    }
+
+# ==============================
 
 @app.get("/status")
-def ver_panel_control():
-    """Muestra el estado de las amenazas detectadas [7]"""
+def ver_panel():
+
     return {
         "amenazas_bloqueadas": len(ips_bloqueadas),
-        "lista_negra": list(ips_bloqueadas.keys()),
-        "intentos_por_ip": intentos
+        "ips_bloqueadas": list(ips_bloqueadas.keys()),
+        "intentos": intentos
     }
+
+# ==============================
 
 @app.post("/desbloquear")
 def desbloquear_ip(ip: str):
-    """Permite al dueño desbloquear una IP manualmente [7]"""
+
     if ip in ips_bloqueadas:
+
         del ips_bloqueadas[ip]
         intentos[ip] = 0
-        return {"mensaje": f"IP {ip} ha sido liberada"}
-    return {"error": "IP no encontrada en la lista negra"}
 
-# TRAMPA DE IDENTIDAD (Honeypot para detectar clonadores) [5]
+        return {
+            "mensaje": f"IP {ip} desbloqueada"
+        }
+
+    return {
+        "error": "IP no encontrada"
+    }
+
+# ==============================
+# HONEYPOT
+# ==============================
+
 @app.get("/datos-privados-bancarios")
-def trampa_identidad(request: Request):
-    ip = request.client.host
-    navegador = request.headers.get("user-agent")
-    ips_bloqueadas[ip] = True 
-    registrar_evento(ip, navegador, "¡ALERTA! Intentaron acceder a la trampa de datos bancarios.")
+def honeypot(request: Request):
+
+    forwarded = request.headers.get("x-forwarded-for")
+
+    if forwarded:
+        ip = forwarded.split(",")[0].strip()
+    else:
+        ip = request.client.host
+
+    navegador = request.headers.get("user-agent", "DESCONOCIDO")
+
+    ips_bloqueadas[ip] = True
+
+    registrar_evento(
+        ip,
+        navegador,
+        "ACTIVACIÓN HONEYPOT"
+    )
+
     enviar_alertas_criticas(ip, navegador)
-    return {"error": "Conexión perdida con el servidor de seguridad"}
+
+    return {
+        "error": "Conexión perdida con el servidor"
+    }
