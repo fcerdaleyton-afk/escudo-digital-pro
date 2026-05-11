@@ -1,26 +1,26 @@
-# 1. Imagen base ultra-ligera (Cero vulnerabilidades según Snyk)
 FROM python:3.11-alpine
 
-# 2. Directorio de trabajo
+# Evitar archivos temporales y asegurar logs en tiempo real
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /app
 
-# 3. Instalamos dependencias de compilación (Necesarias en Alpine)
-# Se eliminan automáticamente al terminar para no dejar rastro
-RUN apk add --no-cache --virtual .build-deps build-base libffi-dev \
-    && pip install --no-cache-dir -r requirements.txt \
-    && apk del .build-deps
+# Actualización de seguridad y dependencias de compilación
+RUN apk update && apk upgrade && \
+    apk add --no-cache --virtual .build-deps build-base libffi-dev
 
-# 4. Copiamos los requerimientos primero (para aprovechar el caché)
+# Instalación de requerimientos
 COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt && \
+    apk del .build-deps
 
-# 5. Copiamos el resto del código de Mary V5
+# Copiar el código y asegurar permisos
 COPY . .
-
-# 6. Seguridad de Élite: Usuario sin privilegios (Comando específico de Alpine)
-RUN adduser -D maryuser
+RUN adduser -D maryuser && \
+    chown -R maryuser:maryuser /app
 USER maryuser
 
-# 7. Configuración de ejecución
 EXPOSE 8000
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,56 @@
+name: CI/CD MARY V5
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+      
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: mary
+          POSTGRES_PASSWORD: marypass
+          POSTGRES_DB: marydb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Run tests
+      env:
+        REDIS_HOST: localhost
+        REDIS_PORT: 6379
+        DATABASE_URL: postgresql://mary:marypass@localhost:5432/marydb
+      run: |
+        pytest -v --cov=app --cov-report=xml
+    
+    - name: Upload coverage
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml

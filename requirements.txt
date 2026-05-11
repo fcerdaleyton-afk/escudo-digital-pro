@@ -1,20 +1,18 @@
-# CORE BLINDADO
+# CORE & SEGURIDAD (Blindado contra ReDoS y Smuggling)
 fastapi==0.115.5
 starlette==0.41.3
 uvicorn[standard]==0.32.1
 
-# DEPENDENCIAS DE SEGURIDAD (Mata el Medium)
-python-multipart==0.0.18
-h11==0.16.0
-anyio==4.6.2.post1
-cryptography==44.0.0
-idna==3.10
-sniffio==1.3.1
-
-# AUTH & REDIS
-python-jose[cryptography]==3.3.0
-passlib[bcrypt]==1.7.4
+# INFRAESTRUCTURA & MONITOREO (Nivel Élite)
+python-json-logger==2.0.7
+prometheus_client==0.21.0
 redis==5.2.0
-slowapi==0.1.9
+python-multipart==0.0.18
+
+# VALIDACIÓN & CRIPTOGRAFÍA
 pydantic==2.9.2
 pydantic-settings==2.6.1
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+cryptography==44.0.0
+anyio==4.6.2.post1
