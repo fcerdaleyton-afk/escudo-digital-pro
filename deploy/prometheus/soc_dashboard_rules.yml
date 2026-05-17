@@ -1,0 +1,237 @@
+# MARY V5 SHIELD CORE v5.0 Enterprise - SOC Dashboard Prometheus Rules
+# Prometheus alerting rules for SOC dashboard metrics
+
+groups:
+  - name: mary_v5_shield_soc_dashboard
+    rules:
+      # Threat metrics
+      - record: mary_v5_shield_threats_total
+        expr: sum(mary_v5_shield_threat_events_total) or vector(0)
+      
+      - record: mary_v5_shield_threats_critical
+        expr: sum(mary_v5_shield_threat_events_total{severity="critical"}) or vector(0)
+      
+      - record: mary_v5_shield_threats_high
+        expr: sum(mary_v5_shield_threat_events_total{severity="high"}) or vector(0)
+      
+      - record: mary_v5_shield_threats_medium
+        expr: sum(mary_v5_shield_threat_events_total{severity="medium"}) or vector(0)
+      
+      - record: mary_v5_shield_threats_low
+        expr: sum(mary_v5_shield_threat_events_total{severity="low"}) or vector(0)
+      
+      # Auth abuse metrics
+      - record: mary_v5_shield_auth_abuse_total
+        expr: sum(mary_v5_shield_auth_abuse_events_total) or vector(0)
+      
+      - record: mary_v5_shield_auth_abuse_blocked
+        expr: sum(mary_v5_shield_auth_abuse_events_total{blocked="true"}) or vector(0)
+      
+      - record: mary_v5_shield_auth_abuse_attempts
+        expr: sum(mary_v5_shield_auth_abuse_attempts_total) or vector(0)
+      
+      # Suspicious IP metrics
+      - record: mary_v5_shield_suspicious_ips_total
+        expr: sum(mary_v5_shield_suspicious_ips_total) or vector(0)
+      
+      - record: mary_v5_shield_suspicious_ips_high_risk
+        expr: sum(mary_v5_shield_suspicious_ips_total{threat_level="critical"}) or vector(0)
+      
+      - record: mary_v5_shield_suspicious_ips_medium_risk
+        expr: sum(mary_v5_shield_suspicious_ips_total{threat_level="high"}) or vector(0)
+      
+      - record: mary_v5_shield_suspicious_ips_low_risk
+        expr: sum(mary_v5_shield_suspicious_ips_total{threat_level="medium"}) or vector(0)
+      
+      # WebSocket alert metrics
+      - record: mary_v5_shield_websocket_alerts_total
+        expr: sum(mary_v5_shield_websocket_alerts_total) or vector(0)
+      
+      - record: mary_v5_shield_websocket_alerts_active
+        expr: sum(mary_v5_shield_websocket_alerts_total{resolved="false"}) or vector(0)
+      
+      - record: mary_v5_shield_websocket_alerts_resolved
+        expr: sum(mary_v5_shield_websocket_alerts_total{resolved="true"}) or vector(0)
+      
+      # Blocked request metrics
+      - record: mary_v5_shield_blocked_requests_total
+        expr: sum(mary_v5_shield_blocked_requests_total) or vector(0)
+      
+      - record: mary_v5_shield_blocked_requests_critical
+        expr: sum(mary_v5_shield_blocked_requests_total{severity="critical"}) or vector(0)
+      
+      - record: mary_v5_shield_blocked_requests_high
+        expr: sum(mary_v5_shield_blocked_requests_total{severity="high"}) or vector(0)
+      
+      - record: mary_v5_shield_blocked_requests_medium
+        expr: sum(mary_v5_shield_blocked_requests_total{severity="medium"}) or vector(0)
+      
+      - record: mary_v5_shield_blocked_requests_low
+        expr: sum(mary_v5_shield_blocked_requests_total{severity="low"}) or vector(0)
+      
+      # Attack heatmap metrics
+      - record: mary_v5_shield_attacks_by_region
+        expr: sum by (region) (mary_v5_shield_threat_events_total) or vector(0)
+      
+      # System load metrics
+      - record: mary_v5_shield_system_cpu_usage
+        expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) or vector(0)
+      
+      - record: mary_v5_shield_system_memory_usage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 or vector(0)
+      
+      - record: mary_v5_shield_system_disk_usage
+        expr: (1 - (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"})) * 100 or vector(0)
+      
+      - record: mary_v5_shield_system_status
+        expr: label_replace(
+            label_replace(
+              label_replace(
+                label_replace(
+                  vector(1),
+                  "status", "healthy",
+                  "mary_v5_shield_system_cpu_usage > 80"
+                ),
+                "status", "degraded",
+                "mary_v5_shield_system_memory_usage > 85"
+              ),
+              "status", "critical",
+              "mary_v5_shield_system_disk_usage > 90"
+            ),
+            "status", "unknown",
+            "vector(1)"
+          )
+      
+      # Rate calculations
+      - record: mary_v5_shield_threats_rate
+        expr: rate(mary_v5_shield_threat_events_total[5m]) or vector(0)
+      
+      - record: mary_v5_shield_auth_abuse_rate
+        expr: rate(mary_v5_shield_auth_abuse_events_total[5m]) or vector(0)
+      
+      - record: mary_v5_shield_blocked_requests_rate
+        expr: rate(mary_v5_shield_blocked_requests_total[5m]) or vector(0)
+      
+      # Time-based aggregations
+      - record: mary_v5_shield_threats_last_hour
+        expr: increase(mary_v5_shield_threat_events_total[1h]) or vector(0)
+      
+      - record: mary_v5_shield_threats_last_24h
+        expr: increase(mary_v5_shield_threat_events_total[24h]) or vector(0)
+      
+      - record: mary_v5_shield_auth_abuse_last_hour
+        expr: increase(mary_v5_shield_auth_abuse_events_total[1h]) or vector(0)
+      
+      - record: mary_v5_shield_blocked_requests_last_hour
+        expr: increase(mary_v5_shield_blocked_requests_total[1h]) or vector(0)
+      
+      # Performance metrics
+      - record: mary_v5_shield_avg_response_time
+        expr: rate(mary_v5_shield_request_duration_seconds_sum[5m]) / rate(mary_v5_shield_request_duration_seconds_count[5m]) or vector(0)
+      
+      - record: mary_v5_shield_request_rate
+        expr: rate(mary_v5_shield_http_requests_total[5m]) or vector(0)
+      
+      - record: mary_v5_shield_error_rate
+        expr: rate(mary_v5_shield_http_requests_total{status=~"5.."}[5m]) / rate(mary_v5_shield_http_requests_total[5m]) or vector(0)
+      
+      # Security metrics
+      - record: mary_v5_shield_security_score
+        expr: (
+          (1 - (mary_v5_shield_threats_critical / (mary_v5_shield_threats_total + 1))) * 0.4 +
+          (1 - (mary_v5_shield_auth_abuse_blocked / (mary_v5_shield_auth_abuse_total + 1))) * 0.3 +
+          (1 - (mary_v5_shield_blocked_requests_critical / (mary_v5_shield_blocked_requests_total + 1))) * 0.3
+        ) * 100 or vector(0)
+      
+      # Alert thresholds
+      - record: mary_v5_shield_alert_threshold_high
+        expr: (
+          mary_v5_shield_threats_critical > 0 or
+          mary_v5_shield_auth_abuse_blocked > 10 or
+          mary_v5_shield_blocked_requests_critical > 5
+        ) * 1 or vector(0)
+      
+      - record: mary_v5_shield_alert_threshold_medium
+        expr: (
+          mary_v5_shield_threats_high > 5 or
+          mary_v5_shield_auth_abuse_blocked > 5 or
+          mary_v5_shield_blocked_requests_high > 10
+        ) * 1 or vector(0)
+      
+      - record: mary_v5_shield_alert_threshold_low
+        expr: (
+          mary_v5_shield_threats_medium > 10 or
+          mary_v5_shield_auth_abuse_blocked > 2 or
+          mary_v5_shield_blocked_requests_medium > 20
+        ) * 1 or vector(0)
+      
+      # Geographic distribution
+      - record: mary_v5_shield_attacks_by_country
+        expr: sum by (country) (mary_v5_shield_threat_events_total) or vector(0)
+      
+      - record: mary_v5_shield_attacks_by_continent
+        expr: sum by (continent) (mary_v5_shield_threat_events_total) or vector(0)
+      
+      # User-based metrics
+      - record: mary_v5_shield_user_threats
+        expr: sum by (user_id) (mary_v5_shield_threat_events_total) or vector(0)
+      
+      - record: mary_v5_shield_user_auth_abuse
+        expr: sum by (user_id) (mary_v5_shield_auth_abuse_events_total) or vector(0)
+      
+      # Service-specific metrics
+      - record: mary_v5_shield_service_threats
+        expr: sum by (service) (mary_v5_shield_threat_events_total) or vector(0)
+      
+      - record: mary_v5_shield_service_blocked_requests
+        expr: sum by (service) (mary_v5_shield_blocked_requests_total) or vector(0)
+      
+      # Time-of-day analysis
+      - record: mary_v5_shield_threats_by_hour
+        expr: sum by (hour) (mary_v5_shield_threat_events_total) or vector(0)
+      
+      - record: mary_v5_shield_auth_abuse_by_hour
+        expr: sum by (hour) (mary_v5_shield_auth_abuse_events_total) or vector(0)
+      
+      # Trend analysis
+      - record: mary_v5_shield_threats_trend
+        expr: (mary_v5_shield_threats_last_hour - mary_v5_shield_threats_last_hour offset 1h) / (mary_v5_shield_threats_last_hour offset 1h + 1) * 100 or vector(0)
+      
+      - record: mary_v5_shield_auth_abuse_trend
+        expr: (mary_v5_shield_auth_abuse_last_hour - mary_v5_shield_auth_abuse_last_hour offset 1h) / (mary_v5_shield_auth_abuse_last_hour offset 1h + 1) * 100 or vector(0)
+      
+      # Capacity metrics
+      - record: mary_v5_shield_system_capacity
+        expr: (
+          (100 - mary_v5_shield_system_cpu_usage) * 0.4 +
+          (100 - mary_v5_shield_system_memory_usage) * 0.4 +
+          (100 - mary_v5_shield_system_disk_usage) * 0.2
+        ) or vector(0)
+      
+      # Health indicators
+      - record: mary_v5_shield_overall_health
+        expr: (
+          mary_v5_shield_security_score * 0.5 +
+          mary_v5_shield_system_capacity * 0.3 +
+          (100 - mary_v5_shield_error_rate * 100) * 0.2
+        ) or vector(0)
+      
+      # Alert fatigue metrics
+      - record: mary_v5_shield_alert_fatigue_rate
+        expr: (mary_v5_shield_websocket_alerts_resolved / (mary_v5_shield_websocket_alerts_total + 1)) * 100 or vector(0)
+      
+      # Effectiveness metrics
+      - record: mary_v5_shield_detection_effectiveness
+        expr: (mary_v5_shield_blocked_requests_total / (mary_v5_shield_threats_total + 1)) * 100 or vector(0)
+      
+      # Response time metrics
+      - record: mary_v5_shield_avg_detection_time
+        expr: mary_v5_shield_threat_detection_duration_seconds_sum / mary_v5_shield_threat_detection_duration_seconds_count or vector(0)
+      
+      # Compliance metrics
+      - record: mary_v5_shield_compliance_score
+        expr: (
+          (100 - mary_v5_shield_error_rate * 100) * 0.4 +
+          mary_v5_shield_detection_effectiveness * 0.3 +
+          mary_v5_shield_alert_fatigue_rate * 0.3
+        ) or vector(0)

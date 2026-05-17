@@ -1,0 +1,19 @@
+# Query: main:app
+# ContextLines: 1
+
+3 results - 3 files
+
+RELEASE_NOTES.md:
+  265  # Start application
+  266: uvicorn app.main:app --host 0.0.0.0 --port 8000
+  267  ```
+
+SHIELD_CORE_DOCUMENTATION.md:
+  268  ```bash
+  269: uvicorn app.main:app --host 0.0.0.0 --port 8000
+  270  ```
+
+deploy\docker\Dockerfile.prod:
+  132  # Security-focused runtime command
+  133 CMD ["python", "-m", "uvicorn", "app.main:app",
+  134       "--host", "0.0.0.0", \

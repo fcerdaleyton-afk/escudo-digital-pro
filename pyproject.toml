@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mary-v5-api"
+version = "5.0.0"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]

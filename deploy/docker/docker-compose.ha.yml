@@ -1,0 +1,397 @@
+version: '3.8'
+
+services:
+  # Redis for shared state and distributed locking
+  redis-ha:
+    image: redis:7-alpine
+    container_name: mary-v5-redis-ha
+    hostname: redis-ha
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    networks:
+      - mary-v5-network
+    restart: unless-stopped
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # PostgreSQL with replication
+  postgres-primary:
+    image: postgres:15-alpine
+    container_name: mary-v5-postgres-primary
+    hostname: postgres-primary
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_primary_data:/var/lib/postgresql/data
+      - ./postgres/postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./postgres/pg_hba.conf:/etc/postgresql/pg_hba.conf
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_REPLICATION_USER=${POSTGRES_REPLICATION_USER}
+      - POSTGRES_REPLICATION_PASSWORD=${POSTGRES_REPLICATION_PASSWORD}
+    networks:
+      - mary-v5-network
+    restart: unless-stopped
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  postgres-replica:
+    image: postgres:15-alpine
+    container_name: mary-v5-postgres-replica
+    hostname: postgres-replica
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_replica_data:/var/lib/postgresql/data
+      - ./postgres/postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./postgres/pg_hba.conf:/etc/postgresql/pg_hba.conf
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_REPLICATION_USER=${POSTGRES_REPLICATION_USER}
+      - POSTGRES_REPLICATION_PASSWORD=${POSTGRES_REPLICATION_PASSWORD}
+      - POSTGRES_MASTER_HOST=postgres-primary
+      - POSTGRES_MASTER_PORT=5432
+    networks:
+      - mary-v5-network
+    restart: unless-stopped
+    depends_on:
+      - postgres-primary
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Load Balancer (Nginx)
+  nginx-lb:
+    image: nginx:alpine
+    container_name: mary-v5-nginx-lb
+    hostname: nginx-lb
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
+      - nginx_logs:/var/log/nginx
+    networks:
+      - mary-v5-network
+    restart: unless-stopped
+    depends_on:
+      - mary-v5-app-1
+      - mary-v5-app-2
+      - mary-v5-app-3
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Application instances with horizontal scaling
+  mary-v5-app-1:
+    build:
+      context: ../../
+      dockerfile: Dockerfile
+    container_name: mary-v5-app-1
+    hostname: mary-v5-app-1
+    ports:
+      - "8001:8000"
+    volumes:
+      - app_logs:/app/logs
+      - app_data:/app/data
+      - ./config:/app/config
+    environment:
+      - NODE_ID=mary-v5-app-1
+      - NODE_HOSTNAME=mary-v5-app-1
+      - REDIS_URL=redis://redis-ha:6379
+      - POSTGRES_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres-primary:5432/${POSTGRES_DB}
+      - POSTGRES_REPLICA_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres-replica:5432/${POSTGRES_DB}
+      - ENABLE_HA=true
+      - ENABLE_STATELESS_API=true
+      - ENABLE_DISTRIBUTED_LOCKS=true
+      - INSTANCE_ID=1
+      - CLUSTER_SIZE=3
+    networks:
+      - mary-v5-network
+    restart: unless-stopped
+    depends_on:
+      - redis-ha
+      - postgres-primary
+      - postgres-replica
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mary-v5-app-2:
+    build:
+      context: ../../
+      dockerfile: Dockerfile
+    container_name: mary-v5-app-2
+    hostname: mary-v5-app-2
+    ports:
+      - "8002:8000"
+    volumes:
+      - app_logs:/app/logs
+      - app_data:/app/data
+      - ./config:/app/config
+    environment:
+      - NODE_ID=mary-v5-app-2
+      - NODE_HOSTNAME=mary-v5-app-2
+      - REDIS_URL=redis://redis-ha:6379
+      - POSTGRES_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres-primary:5432/${POSTGRES_DB}
+      - POSTGRES_REPLICA_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres-replica:5432/${POSTGRES_DB}
+      - ENABLE_HA=true
+      - ENABLE_STATELESS_API=true
+      - ENABLE_DISTRIBUTED_LOCKS=true
+      - INSTANCE_ID=2
+      - CLUSTER_SIZE=3
+    networks:
+      - mary-v5-network
+    restart: unless-stopped
+    depends_on:
+      - redis-ha
+      - postgres-primary
+      - postgres-replica
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mary-v5-app-3:
+    build:
+      context: ../../
+      dockerfile: Dockerfile
+    container_name: mary-v5-app-3
+    hostname: mary-v5-app-3
+    ports:
+      - "8003:8000"
+    volumes:
+      - app_logs:/app/logs
+      - app_data:/app/data
+      - ./config:/app/config
+    environment:
+      - NODE_ID=mary-v5-app-3
+      - NODE_HOSTNAME=mary-v5-app-3
+      - REDIS_URL=redis://redis-ha:6379
+      - POSTGRES_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres-primary:5432/${POSTGRES_DB}
+      - POSTGRES_REPLICA_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres-replica:5432/${POSTGRES_DB}
+      - ENABLE_HA=true
+      - ENABLE_STATELESS_API=true
+      - ENABLE_DISTRIBUTED_LOCKS=true
+      - INSTANCE_ID=3
+      - CLUSTER_SIZE=3
+    networks:
+      - mary-v5-network
+    restart: unless-stopped
+    depends_on:
+      - redis-ha
+      - postgres-primary
+      - postgres-replica
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Prometheus for monitoring
+  prometheus-ha:
+    image: prom/prometheus:latest
+    container_name: mary-v5-prometheus-ha
+    hostname: prometheus-ha
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./monitoring/prometheus/rules:/etc/prometheus/rules
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - mary-v5-network
+    restart: unless-stopped
+    depends_on:
+      - mary-v5-app-1
+      - mary-v5-app-2
+      - mary-v5-app-3
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+  # Grafana for visualization
+  grafana-ha:
+    image: grafana/grafana:latest
+    container_name: mary-v5-grafana-ha
+    hostname: grafana-ha
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource
+    networks:
+      - mary-v5-network
+    restart: unless-stopped
+    depends_on:
+      - prometheus-ha
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+
+  # AlertManager
+  alertmanager-ha:
+    image: prom/alertmanager:latest
+    container_name: mary-v5-alertmanager-ha
+    hostname: alertmanager-ha
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./monitoring/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+      - alertmanager_data:/alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+      - '--storage.path=/alertmanager'
+    networks:
+      - mary-v5-network
+    restart: unless-stopped
+    depends_on:
+      - prometheus-ha
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 128M
+        reservations:
+          cpus: '0.1'
+          memory: 64M
+
+volumes:
+  redis_data:
+    driver: local
+  postgres_primary_data:
+    driver: local
+  postgres_replica_data:
+    driver: local
+  nginx_logs:
+    driver: local
+  app_logs:
+    driver: local
+  app_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  alertmanager_data:
+    driver: local
+
+networks:
+  mary-v5-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

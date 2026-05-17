@@ -1,0 +1,645 @@
+2026-05-12 21:56:17,579 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 17:54:56,504 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 17:58:18,271 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 18:06:12,119 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 18:22:33,214 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 18:22:33,214 - simplified_app - INFO - Starting simplified application
+2026-05-15 18:22:33,214 - core.simplified_core - INFO - Starting simplified core
+2026-05-15 18:22:33,214 - core.simplified_core - INFO - Simplified core started successfully
+2026-05-15 18:22:33,214 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 18:22:33,214 - core.simplified_core - INFO - Core system initialized
+2026-05-15 18:22:33,214 - simplified_api - INFO - Simplified API initialized
+2026-05-15 18:22:33,214 - simplified_app - INFO - Simplified application started successfully
+2026-05-15 19:46:51,399 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 19:49:19,663 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:04:51,581 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:09:54,183 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:09:57,266 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-05-15 20:14:31,487 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:16:10,855 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:16:13,152 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-05-15 20:30:13,655 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2026-05-15 20:30:47,986 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:31:34,048 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:31:35,223 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 20:31:35,273 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 20:31:35,273 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 20:31:35,274 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 20:31:35,287 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 20:31:35,287 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 20:31:35,297 - mary_v5 - INFO - Generated new encryption key
+2026-05-15 20:31:35,299 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 20:31:35,299 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 20:31:35,300 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 20:31:35,300 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 20:32:16,316 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:32:17,465 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 20:32:17,482 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 20:32:17,482 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 20:32:17,483 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 20:32:17,488 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 20:32:17,488 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 20:32:17,600 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 20:32:17,601 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 20:32:17,601 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 20:32:17,601 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 20:32:17,617 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 20:32:17,618 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 20:32:17,618 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 20:32:17,618 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 20:32:17,629 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 20:32:17,629 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 20:32:17,629 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 20:32:17,630 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 20:32:17,637 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 20:32:17,638 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 20:32:17,638 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 20:32:17,638 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 20:32:47,134 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:32:48,279 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 20:32:48,296 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 20:32:48,296 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 20:32:48,296 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 20:32:48,302 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 20:32:48,302 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 20:32:48,409 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 20:32:48,410 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 20:32:48,410 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 20:32:48,410 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 20:32:48,426 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 20:32:48,426 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 20:32:48,427 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 20:32:48,427 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 20:32:48,429 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 20:32:48,430 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 20:32:48,430 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 20:32:48,430 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 20:32:48,452 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 20:32:48,452 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 20:32:48,452 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 20:32:48,453 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 20:32:48,453 - mary_v5 - INFO - Windows hardening engine initialized | {'enabled': True}
+2026-05-15 20:32:48,466 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 20:32:48,466 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 20:32:48,466 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 20:32:48,467 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 20:32:48,467 - mary_v5 - INFO - Enterprise security manager initialized | {'enabled': True}
+2026-05-15 20:33:17,983 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:33:19,206 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 20:33:19,235 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 20:33:19,239 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 20:33:19,242 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 20:33:19,266 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 20:33:19,270 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 20:33:19,430 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 20:33:19,430 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 20:33:19,431 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 20:33:19,431 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 20:33:19,449 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 20:33:19,451 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 20:33:19,451 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 20:33:19,452 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 20:33:19,456 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 20:33:19,456 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 20:33:19,457 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 20:33:19,457 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 20:33:19,459 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 20:33:19,459 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 20:33:19,460 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 20:33:19,460 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 20:33:19,460 - mary_v5 - INFO - Windows hardening engine initialized | {'enabled': True}
+2026-05-15 20:33:19,465 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 20:33:19,467 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 20:33:19,468 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 20:33:19,469 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 20:33:19,471 - mary_v5 - INFO - Enterprise security manager initialized | {'enabled': True}
+2026-05-15 20:33:43,040 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:33:44,330 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 20:33:44,346 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 20:33:44,348 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 20:33:44,349 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 20:33:44,355 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 20:33:44,355 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 20:33:44,466 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 20:33:44,469 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 20:33:44,472 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 20:33:44,475 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 20:33:44,505 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 20:33:44,506 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 20:33:44,508 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 20:33:44,509 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 20:33:44,519 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 20:33:44,521 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 20:33:44,526 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 20:33:44,528 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 20:33:44,538 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 20:33:44,539 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 20:33:44,539 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 20:33:44,540 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 20:33:44,540 - mary_v5 - INFO - Windows hardening engine initialized | {'enabled': True}
+2026-05-15 20:33:44,550 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 20:33:44,552 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 20:33:44,554 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 20:33:44,554 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 20:33:44,555 - mary_v5 - INFO - Enterprise security manager initialized | {'enabled': True}
+2026-05-15 20:34:09,129 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:34:10,490 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 20:34:10,527 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 20:34:10,530 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 20:34:10,532 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 20:34:10,538 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 20:34:10,538 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 20:34:10,655 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 20:34:10,655 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 20:34:10,655 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 20:34:10,656 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 20:34:10,675 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 20:34:10,675 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 20:34:10,676 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 20:34:10,676 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 20:34:10,680 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 20:34:10,682 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 20:34:10,683 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 20:34:10,683 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 20:34:10,686 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 20:34:10,687 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 20:34:10,687 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 20:34:10,688 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 20:34:10,688 - mary_v5 - INFO - Windows hardening engine initialized | {'enabled': True}
+2026-05-15 20:34:10,693 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 20:34:10,694 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 20:34:10,695 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 20:34:10,695 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 20:34:10,695 - mary_v5 - INFO - Enterprise security manager initialized | {'enabled': True}
+2026-05-15 20:35:46,009 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:35:47,167 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 20:35:47,184 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 20:35:47,184 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 20:35:47,184 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 20:35:47,190 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 20:35:47,190 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 20:35:47,290 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 20:35:47,290 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 20:35:47,290 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 20:35:47,290 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 20:35:47,306 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 20:35:47,306 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 20:35:47,307 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 20:35:47,307 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 20:35:47,310 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 20:35:47,310 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 20:35:47,310 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 20:35:47,311 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 20:35:47,313 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 20:35:47,315 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 20:35:47,315 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 20:35:47,316 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 20:35:47,317 - mary_v5 - INFO - Windows hardening engine initialized | {'enabled': True}
+2026-05-15 20:35:47,321 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 20:35:47,321 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 20:35:47,322 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 20:35:47,322 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 20:35:47,322 - mary_v5 - INFO - Enterprise security manager initialized | {'enabled': True}
+2026-05-15 20:35:47,350 - mary_v5 - ERROR - Failed to import routes: cannot import name 'get_system_health' from 'app.core.observability' (C:\Users\HP\Desktop\BACKUP_MARY_V5\app\core\observability.py)
+2026-05-15 20:36:35,523 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:36:36,686 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 20:36:36,703 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 20:36:36,704 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 20:36:36,704 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 20:36:36,712 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 20:36:36,713 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 20:36:36,812 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 20:36:36,812 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 20:36:36,812 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 20:36:36,813 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 20:36:36,830 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 20:36:36,830 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 20:36:36,830 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 20:36:36,830 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 20:36:36,833 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 20:36:36,834 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 20:36:36,834 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 20:36:36,834 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 20:36:36,837 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 20:36:36,837 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 20:36:36,837 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 20:36:36,838 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 20:36:36,838 - mary_v5 - INFO - Windows hardening engine initialized | {'enabled': True}
+2026-05-15 20:36:36,844 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 20:36:36,845 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 20:36:36,846 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 20:36:36,846 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 20:36:36,846 - mary_v5 - INFO - Enterprise security manager initialized | {'enabled': True}
+2026-05-15 20:36:36,880 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True, 'level': 'balanced'}
+2026-05-15 20:36:36,885 - mary_v5 - INFO - TLS validator initialized | {'enabled': True}
+2026-05-15 20:36:36,909 - mary_v5 - INFO - Admin security manager initialized | {'enabled': True}
+2026-05-15 20:36:37,073 - mary_v5 - INFO - All routes registered successfully
+2026-05-15 20:37:18,711 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:37:19,781 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 20:37:19,797 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 20:37:19,797 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 20:37:19,798 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 20:37:19,802 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 20:37:19,802 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 20:37:19,901 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 20:37:19,901 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 20:37:19,901 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 20:37:19,902 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 20:37:19,917 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 20:37:19,917 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 20:37:19,919 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 20:37:19,919 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 20:37:19,925 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 20:37:19,925 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 20:37:19,926 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 20:37:19,926 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 20:37:19,928 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 20:37:19,929 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 20:37:19,929 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 20:37:19,929 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 20:37:19,930 - mary_v5 - INFO - Windows hardening engine initialized | {'enabled': True}
+2026-05-15 20:37:19,934 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 20:37:19,935 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 20:37:19,935 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 20:37:19,935 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 20:37:19,937 - mary_v5 - INFO - Enterprise security manager initialized | {'enabled': True}
+2026-05-15 20:37:19,946 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True, 'level': 'balanced'}
+2026-05-15 20:37:19,947 - mary_v5 - INFO - TLS validator initialized | {'enabled': True}
+2026-05-15 20:37:19,962 - mary_v5 - INFO - Admin security manager initialized | {'enabled': True}
+2026-05-15 20:37:20,096 - mary_v5 - INFO - All routes registered successfully
+2026-05-15 20:37:20,097 - mary_v5 - INFO - Defensive monitoring middleware initialized
+2026-05-15 20:37:20,097 - mary_v5 - INFO - Application starting | {'project': 'MARY_V5', 'environment': 'dev', 'version': '5.0'}
+2026-05-15 20:37:24,201 - mary_v5 - INFO - Redis initialized successfully
+2026-05-15 20:37:24,214 - mary_v5 - INFO - Application shutdown completed
+2026-05-15 20:39:42,081 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:49:01,272 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 20:49:02,121 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 20:49:02,137 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 20:49:02,137 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 20:49:02,137 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 20:49:02,137 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 20:49:02,137 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 20:49:02,231 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 20:49:02,231 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 20:49:02,231 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 20:49:02,231 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 20:49:02,231 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 20:49:02,231 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 20:49:02,246 - mary_v5 - INFO - Windows hardening engine initialized | {'enabled': True}
+2026-05-15 20:49:02,262 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 20:49:02,262 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 20:49:02,262 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 20:49:02,262 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 20:49:02,262 - mary_v5 - INFO - Enterprise security manager initialized | {'enabled': True}
+2026-05-15 20:49:02,277 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True, 'level': 'balanced'}
+2026-05-15 20:49:02,277 - mary_v5 - INFO - TLS validator initialized | {'enabled': True}
+2026-05-15 20:49:02,293 - mary_v5 - INFO - Admin security manager initialized | {'enabled': True}
+2026-05-15 20:49:02,405 - mary_v5 - INFO - All routes registered successfully
+2026-05-15 20:49:02,420 - mary_v5 - INFO - Defensive monitoring middleware initialized
+2026-05-15 20:49:02,420 - mary_v5 - INFO - Application starting | {'project': 'MARY_V5', 'environment': 'dev', 'version': '5.0'}
+2026-05-15 20:49:06,514 - mary_v5 - INFO - Redis initialized successfully
+2026-05-15 20:49:06,514 - mary_v5 - INFO - Application shutdown completed
+2026-05-15 21:26:05,447 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 21:26:06,623 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 21:26:06,657 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 21:26:06,662 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 21:26:06,664 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 21:26:06,678 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 21:26:06,679 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 21:26:06,898 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 21:26:06,898 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 21:26:06,898 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 21:26:06,899 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 21:26:06,906 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 21:26:06,906 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 21:26:06,907 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 21:26:06,907 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 21:26:06,909 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 21:26:06,910 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 21:26:06,910 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 21:26:06,910 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 21:26:06,912 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 21:26:06,913 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 21:26:06,913 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 21:26:06,914 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 21:26:06,914 - mary_v5 - INFO - Windows hardening engine initialized | {'enabled': True}
+2026-05-15 21:26:06,922 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 21:26:06,922 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 21:26:06,923 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 21:26:06,923 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 21:26:06,924 - mary_v5 - INFO - Enterprise security manager initialized | {'enabled': True}
+2026-05-15 21:26:06,933 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True, 'level': 'balanced'}
+2026-05-15 21:26:06,937 - mary_v5 - INFO - TLS validator initialized | {'enabled': True}
+2026-05-15 21:26:06,952 - mary_v5 - INFO - Admin security manager initialized | {'enabled': True}
+2026-05-15 21:26:07,009 - mary_v5 - INFO - All routes registered successfully
+2026-05-15 21:28:10,486 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 21:28:40,112 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 21:29:41,964 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 21:29:43,563 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 21:29:43,586 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 21:29:43,586 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 21:29:43,586 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 21:29:43,599 - mary_v5 - INFO - Real-time dashboard initialized | {'enabled': True}
+2026-05-15 21:29:43,599 - mary_v5 - INFO - Prometheus metrics initialized | {'enabled': True}
+2026-05-15 21:29:43,715 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 21:29:43,715 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 21:29:43,716 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 21:29:43,716 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 21:29:43,728 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 21:29:43,728 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 21:29:43,729 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 21:29:43,729 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 21:29:43,734 - mary_v5 - INFO - Advanced cache initialized | {'enabled': True}
+2026-05-15 21:29:43,734 - mary_v5 - INFO - Background worker initialized | {'enabled': True}
+2026-05-15 21:29:43,735 - mary_v5 - INFO - Memory optimizer initialized | {'enabled': True}
+2026-05-15 21:29:43,735 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True}
+2026-05-15 21:29:43,740 - mary_v5 - INFO - Scheduled task monitor initialized | {'enabled': True}
+2026-05-15 21:29:43,741 - mary_v5 - INFO - Registry persistence monitor initialized | {'enabled': True}
+2026-05-15 21:29:43,741 - mary_v5 - INFO - PowerShell monitor initialized | {'enabled': True}
+2026-05-15 21:29:43,741 - mary_v5 - INFO - Startup folder monitor initialized | {'enabled': True}
+2026-05-15 21:29:43,741 - mary_v5 - INFO - Windows hardening engine initialized | {'enabled': True}
+2026-05-15 21:29:43,752 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 21:29:43,753 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 21:29:43,753 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 21:29:43,753 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 21:29:43,753 - mary_v5 - INFO - Enterprise security manager initialized | {'enabled': True}
+2026-05-15 21:29:44,314 - mary_v5 - INFO - Performance optimizer initialized | {'enabled': True, 'level': 'balanced'}
+2026-05-15 21:29:44,316 - mary_v5 - INFO - TLS validator initialized | {'enabled': True}
+2026-05-15 21:29:44,345 - mary_v5 - INFO - Admin security manager initialized | {'enabled': True}
+2026-05-15 21:29:44,401 - mary_v5 - INFO - All routes registered successfully
+2026-05-15 21:29:44,414 - mary_v5 - INFO - Defensive monitoring middleware initialized
+2026-05-15 21:29:48,495 - mary_v5 - INFO - Rate limiting: Redis backend initialized
+2026-05-15 21:29:48,496 - mary_v5 - ERROR - Rate limiting Redis error: 'NoneType' object has no attribute 'pipeline'
+2026-05-15 21:29:52,598 - mary_v5 - ERROR - Request processing error | {'request_id': '7149748b-2317-425f-8271-e2cb6ad3bc18', 'path': '/health/live', 'method': 'GET', 'error': "'State' object has no attribute 'environment'"}
+2026-05-15 21:29:52,602 - httpx - INFO - HTTP Request: GET http://testserver/health/live "HTTP/1.1 500 Internal Server Error"
+2026-05-15 21:29:52,610 - mary_v5 - ERROR - Rate limiting Redis error: 'NoneType' object has no attribute 'pipeline'
+2026-05-15 21:29:56,731 - mary_v5 - ERROR - Request processing error | {'request_id': '240fb595-9b8d-4bd5-8b47-6fc2a7d163aa', 'path': '/api/v1/assistant/chat', 'method': 'POST', 'error': "'State' object has no attribute 'environment'"}
+2026-05-15 21:29:56,734 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/assistant/chat "HTTP/1.1 500 Internal Server Error"
+2026-05-15 21:59:01,980 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 21:59:37,882 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 21:59:38,659 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 21:59:38,676 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 21:59:38,677 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 21:59:38,678 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 21:59:38,688 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 21:59:38,688 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 21:59:38,688 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 21:59:38,689 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 21:59:38,932 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 21:59:38,932 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 21:59:38,932 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 21:59:38,933 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 21:59:38,954 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 21:59:38,955 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 21:59:38,955 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 21:59:38,955 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 21:59:38,970 - mary_v5 - INFO - IP reputation filter initialized | {'enabled': True}
+2026-05-15 21:59:38,972 - mary_v5 - INFO - Request fingerprinter initialized | {'enabled': True}
+2026-05-15 21:59:39,165 - mary_v5 - INFO - Threat scoring engine initialized | {'enabled': True}
+2026-05-15 21:59:39,176 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 21:59:39,176 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 21:59:39,176 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 21:59:39,185 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 21:59:39,185 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 21:59:39,186 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 21:59:39,192 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 21:59:39,192 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 21:59:39,192 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 21:59:39,194 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 21:59:39,194 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 21:59:39,195 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 21:59:39,196 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 21:59:39,199 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 21:59:39,200 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 21:59:39,200 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 21:59:39,200 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 21:59:39,207 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 21:59:39,207 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 21:59:39,207 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 21:59:39,207 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 21:59:39,307 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 21:59:39,307 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 21:59:39,308 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 21:59:39,308 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 21:59:39,404 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 21:59:39,404 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 21:59:39,405 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 21:59:39,405 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 21:59:39,500 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 21:59:39,500 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 21:59:39,500 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 21:59:39,500 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 21:59:39,592 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 21:59:39,593 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 21:59:39,593 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 21:59:39,593 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 21:59:39,594 - mary_v5_console_2545022611792 - INFO - {"timestamp": "2026-05-16T01:59:39.594093", "event_type": "audit", "severity": "audit", "action": "database_operation", "user": "admin", "resource": "SELECT:users", "result": "success", "details": {"operation": "SELECT", "table": "users", "affected_rows": 5, "risk_level": "high"}, "correlation_id": null, "source": "mary-v5-audit"}
+2026-05-15 21:59:39,594 - mary_v5_file_2545022611792 - INFO - {"timestamp": "2026-05-16T01:59:39.594093", "event_type": "audit", "severity": "audit", "action": "database_operation", "user": "admin", "resource": "SELECT:users", "result": "success", "details": {"operation": "SELECT", "table": "users", "affected_rows": 5, "risk_level": "high"}, "correlation_id": null, "source": "mary-v5-audit"}
+2026-05-15 21:59:39,594 - mary_v5_console_2545022611792 - INFO - {"timestamp": "2026-05-16T01:59:39.594093", "event_type": "security", "severity": "security", "category": "suspicious_database_operation", "correlation_id": null, "details": {"operation": "SELECT", "table": "users", "user": "admin", "affected_rows": 5, "query": "SELECT * FROM users"}, "source": "mary-v5-security"}
+2026-05-15 21:59:39,595 - mary_v5_file_2545022611792 - INFO - {"timestamp": "2026-05-16T01:59:39.594093", "event_type": "security", "severity": "security", "category": "suspicious_database_operation", "correlation_id": null, "details": {"operation": "SELECT", "table": "users", "user": "admin", "affected_rows": 5, "query": "SELECT * FROM users"}, "source": "mary-v5-security"}
+2026-05-15 21:59:39,888 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 21:59:39,888 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 21:59:39,888 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 21:59:39,888 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 21:59:39,890 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 21:59:39,890 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 21:59:39,891 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 21:59:39,891 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 21:59:39,937 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 21:59:39,937 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 21:59:39,937 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 21:59:39,938 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 21:59:39,947 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 21:59:39,947 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 21:59:39,948 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 21:59:39,948 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 21:59:40,066 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 21:59:40,067 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 21:59:40,067 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 21:59:40,067 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 21:59:40,067 - mary_v5_console_2545022611792 - INFO - {"timestamp": "2026-05-16T01:59:40.067994", "event_type": "security", "severity": "security", "category": "sql_injection_attempt", "correlation_id": null, "details": {"query": "SELECT * FROM users WHERE id = 1; DROP TABLE users; --", "risk_score": 50, "patterns": [["select", "select"], ["drop", "drop"], ["; drop ", "drop"], "--"], "user": null}, "source": "mary-v5-security"}
+2026-05-15 21:59:40,067 - mary_v5_file_2545022611792 - INFO - {"timestamp": "2026-05-16T01:59:40.067994", "event_type": "security", "severity": "security", "category": "sql_injection_attempt", "correlation_id": null, "details": {"query": "SELECT * FROM users WHERE id = 1; DROP TABLE users; --", "risk_score": 50, "patterns": [["select", "select"], ["drop", "drop"], ["; drop ", "drop"], "--"], "user": null}, "source": "mary-v5-security"}
+2026-05-15 21:59:40,221 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 21:59:40,221 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 21:59:40,221 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 21:59:40,222 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 21:59:40,358 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 21:59:40,358 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 21:59:40,358 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 21:59:40,358 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 21:59:40,358 - mary_v5_console_2545022611792 - INFO - {"timestamp": "2026-05-16T01:59:40.358080", "event_type": "audit", "severity": "audit", "action": "database_operation", "user": "test", "resource": "SELECT:users", "result": "success", "details": {"operation": "SELECT", "table": "users", "affected_rows": 1, "risk_level": "high"}, "correlation_id": null, "source": "mary-v5-audit"}
+2026-05-15 21:59:40,358 - mary_v5_file_2545022611792 - INFO - {"timestamp": "2026-05-16T01:59:40.358080", "event_type": "audit", "severity": "audit", "action": "database_operation", "user": "test", "resource": "SELECT:users", "result": "success", "details": {"operation": "SELECT", "table": "users", "affected_rows": 1, "risk_level": "high"}, "correlation_id": null, "source": "mary-v5-audit"}
+2026-05-15 21:59:40,359 - mary_v5_console_2545022611792 - INFO - {"timestamp": "2026-05-16T01:59:40.359078", "event_type": "security", "severity": "security", "category": "suspicious_database_operation", "correlation_id": null, "details": {"operation": "SELECT", "table": "users", "user": "test", "affected_rows": 1, "query": "SELECT * FROM users WHERE name = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'"}, "source": "mary-v5-security"}
+2026-05-15 21:59:40,359 - mary_v5_file_2545022611792 - INFO - {"timestamp": "2026-05-16T01:59:40.359078", "event_type": "security", "severity": "security", "category": "suspicious_database_operation", "correlation_id": null, "details": {"operation": "SELECT", "table": "users", "user": "test", "affected_rows": 1, "query": "SELECT * FROM users WHERE name = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'"}, "source": "mary-v5-security"}
+2026-05-15 22:01:35,482 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 22:01:35,897 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 22:01:35,914 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 22:01:35,914 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 22:01:35,914 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 22:01:35,914 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 22:01:35,914 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 22:01:35,929 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 22:01:35,929 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 22:01:36,014 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 22:01:36,014 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 22:01:36,014 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 22:01:36,014 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 22:01:36,030 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 22:01:36,030 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 22:01:36,030 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 22:01:36,030 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 22:01:36,030 - mary_v5 - INFO - IP reputation filter initialized | {'enabled': True}
+2026-05-15 22:01:36,047 - mary_v5 - INFO - Request fingerprinter initialized | {'enabled': True}
+2026-05-15 22:01:36,214 - mary_v5 - INFO - Threat scoring engine initialized | {'enabled': True}
+2026-05-15 22:01:36,235 - mary_v5 - INFO - Advanced rate limiter initialized | {'enabled': True}
+2026-05-15 22:01:36,236 - mary_v5 - INFO - Redis connection established for rate limiting
+2026-05-15 22:01:40,273 - mary_v5 - ERROR - Rate limiting check failed | {'error': 'Error 22 connecting to localhost:6379. 22.'}
+2026-05-15 22:01:40,288 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 22:01:40,289 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 22:01:40,289 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 22:01:55,299 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:55.299452", "event_type": "security", "severity": "security", "category": "ransomware_detected", "correlation_id": null, "details": {"threat_id": "ransomware_note_1778896915", "type": "ransomware", "severity": "high", "description": "Ransomware note detected: C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\share\\doc\\yt_dlp\\README.txt", "confidence": 0.85, "evidence": {"note_path": "C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\share\\doc\\yt_dlp\\README.txt", "file_name": "README.txt"}}, "source": "mary-v5-security"}
+2026-05-15 22:01:55,299 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:55.299452", "event_type": "security", "severity": "security", "category": "ransomware_detected", "correlation_id": null, "details": {"threat_id": "ransomware_note_1778896915", "type": "ransomware", "severity": "high", "description": "Ransomware note detected: C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\share\\doc\\yt_dlp\\README.txt", "confidence": 0.85, "evidence": {"note_path": "C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\share\\doc\\yt_dlp\\README.txt", "file_name": "README.txt"}}, "source": "mary-v5-security"}
+2026-05-15 22:01:57,287 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 22:01:57,287 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 22:01:57,287 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 22:01:57,595 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:57.595082", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_3592_1778896917", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 3592, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"], "cpu_percent": 0.0, "memory_percent": 0.33739387239555085}}, "source": "mary-v5-security"}
+2026-05-15 22:01:57,595 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:57.595082", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_3592_1778896917", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 3592, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"], "cpu_percent": 0.0, "memory_percent": 0.33739387239555085}}, "source": "mary-v5-security"}
+2026-05-15 22:01:57,595 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:57.595082", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_3616_1778896917", "type": "malware", "severity": "high", "description": "Suspicious process activity: cmd.exe", "confidence": 0.8, "evidence": {"process_name": "cmd.exe", "pid": 3616, "cmdline": ["C:\\Windows\\system32\\cmd.exe", "/C", "set", "PATH=C:\\Users\\HP\\AppData\\Local\\Programs\\Ollama;%PATH%", "&", "C:\\Users\\HP\\AppData\\Local\\Programs\\Ollama\\ollama app.exe"], "cpu_percent": 0.0, "memory_percent": 0.015466082704877263}}, "source": "mary-v5-security"}
+2026-05-15 22:01:57,595 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:57.595082", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_3616_1778896917", "type": "malware", "severity": "high", "description": "Suspicious process activity: cmd.exe", "confidence": 0.8, "evidence": {"process_name": "cmd.exe", "pid": 3616, "cmdline": ["C:\\Windows\\system32\\cmd.exe", "/C", "set", "PATH=C:\\Users\\HP\\AppData\\Local\\Programs\\Ollama;%PATH%", "&", "C:\\Users\\HP\\AppData\\Local\\Programs\\Ollama\\ollama app.exe"], "cpu_percent": 0.0, "memory_percent": 0.015466082704877263}}, "source": "mary-v5-security"}
+2026-05-15 22:01:57,911 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:57.911205", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_13308_1778896917", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 13308, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-noexit", "-command", "try { . \"c:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\0958016b2a\\resources\\app\\out\\vs\\workbench\\contrib\\terminal\\common\\scripts\\shellIntegration.ps1\" } catch {}"], "cpu_percent": 0.0, "memory_percent": 0.31235735214912247}}, "source": "mary-v5-security"}
+2026-05-15 22:01:57,911 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:57.911205", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_13308_1778896917", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 13308, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-noexit", "-command", "try { . \"c:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\0958016b2a\\resources\\app\\out\\vs\\workbench\\contrib\\terminal\\common\\scripts\\shellIntegration.ps1\" } catch {}"], "cpu_percent": 0.0, "memory_percent": 0.31235735214912247}}, "source": "mary-v5-security"}
+2026-05-15 22:01:57,911 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:57.911205", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_13936_1778896917", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 13936, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-noexit", "-command", "try { . \"c:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\0958016b2a\\resources\\app\\out\\vs\\workbench\\contrib\\terminal\\common\\scripts\\shellIntegration.ps1\" } catch {}"], "cpu_percent": 0.0, "memory_percent": 0.34685246842993855}}, "source": "mary-v5-security"}
+2026-05-15 22:01:57,911 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:57.911205", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_13936_1778896917", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 13936, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-noexit", "-command", "try { . \"c:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\0958016b2a\\resources\\app\\out\\vs\\workbench\\contrib\\terminal\\common\\scripts\\shellIntegration.ps1\" } catch {}"], "cpu_percent": 0.0, "memory_percent": 0.34685246842993855}}, "source": "mary-v5-security"}
+2026-05-15 22:01:57,944 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:57.944498", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_16248_1778896917", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 16248, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-NoProfile", "-Command", "Set-Location -Path 'C:\\Users\\HP\\Desktop\\BACKUP_MARY_V5'; python -m pytest tests/test_security.py -q"], "cpu_percent": 0.0, "memory_percent": 0.24173742905453824}}, "source": "mary-v5-security"}
+2026-05-15 22:01:57,944 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:01:57.944498", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_16248_1778896917", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 16248, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-NoProfile", "-Command", "Set-Location -Path 'C:\\Users\\HP\\Desktop\\BACKUP_MARY_V5'; python -m pytest tests/test_security.py -q"], "cpu_percent": 0.0, "memory_percent": 0.24173742905453824}}, "source": "mary-v5-security"}
+2026-05-15 22:02:00,314 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 22:02:00,314 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 22:02:00,314 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 22:02:00,314 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 22:02:00,314 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 22:02:00,314 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 22:02:00,314 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 22:02:00,321 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 22:02:00,321 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 22:02:00,321 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 22:02:00,322 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 22:02:00,337 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 22:02:00,337 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 22:02:00,337 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 22:02:00,338 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 22:02:00,421 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 22:02:00,421 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 22:02:00,421 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 22:02:00,421 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 22:02:00,505 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 22:02:00,505 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 22:02:00,505 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 22:02:00,505 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 22:02:00,589 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 22:02:00,589 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 22:02:00,589 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 22:02:00,589 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 22:02:00,685 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 22:02:00,686 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 22:02:00,686 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 22:02:00,686 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 22:02:00,687 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:00.686103", "event_type": "audit", "severity": "audit", "action": "database_operation", "user": "admin", "resource": "SELECT:users", "result": "success", "details": {"operation": "SELECT", "table": "users", "affected_rows": 5, "risk_level": "high"}, "correlation_id": null, "source": "mary-v5-audit"}
+2026-05-15 22:02:00,687 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:00.686103", "event_type": "audit", "severity": "audit", "action": "database_operation", "user": "admin", "resource": "SELECT:users", "result": "success", "details": {"operation": "SELECT", "table": "users", "affected_rows": 5, "risk_level": "high"}, "correlation_id": null, "source": "mary-v5-audit"}
+2026-05-15 22:02:00,687 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:00.687100", "event_type": "security", "severity": "security", "category": "suspicious_database_operation", "correlation_id": null, "details": {"operation": "SELECT", "table": "users", "user": "admin", "affected_rows": 5, "query": "SELECT * FROM users"}, "source": "mary-v5-security"}
+2026-05-15 22:02:00,687 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:00.687100", "event_type": "security", "severity": "security", "category": "suspicious_database_operation", "correlation_id": null, "details": {"operation": "SELECT", "table": "users", "user": "admin", "affected_rows": 5, "query": "SELECT * FROM users"}, "source": "mary-v5-security"}
+2026-05-15 22:02:00,739 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 22:02:00,739 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 22:02:00,739 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 22:02:00,739 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 22:02:00,741 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 22:02:00,741 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 22:02:00,741 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 22:02:00,741 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 22:02:00,792 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 22:02:00,793 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 22:02:00,793 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 22:02:00,793 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 22:02:06,293 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 22:02:06,293 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 22:02:06,293 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 22:02:06,293 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 22:02:06,316 - mary_v5 - INFO - IP reputation filter initialized | {'enabled': True}
+2026-05-15 22:02:06,316 - mary_v5 - INFO - Request fingerprinter initialized | {'enabled': True}
+2026-05-15 22:02:06,328 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 22:02:06,329 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 22:02:06,329 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 22:02:06,329 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 22:02:06,329 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:06.329829", "event_type": "audit", "severity": "audit", "action": "zero_trust_auth_success", "user": "admin_user_id", "resource": "device:4a16d1db08ea17c6b48b5d736317b82f", "result": "success", "details": {"device_trust": 0.6, "session_id": "lEINsBGYvPPkiXzuOav13_UM-qgC5XOhg9QcbtjJ77U"}, "correlation_id": null, "source": "mary-v5-audit"}
+2026-05-15 22:02:06,329 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:06.329829", "event_type": "audit", "severity": "audit", "action": "zero_trust_auth_success", "user": "admin_user_id", "resource": "device:4a16d1db08ea17c6b48b5d736317b82f", "result": "success", "details": {"device_trust": 0.6, "session_id": "lEINsBGYvPPkiXzuOav13_UM-qgC5XOhg9QcbtjJ77U"}, "correlation_id": null, "source": "mary-v5-audit"}
+2026-05-15 22:02:06,426 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 22:02:06,426 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 22:02:06,426 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 22:02:06,426 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 22:02:06,426 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:06.426993", "event_type": "security", "severity": "security", "category": "sql_injection_attempt", "correlation_id": null, "details": {"query": "SELECT * FROM users WHERE id = 1; DROP TABLE users; --", "risk_score": 50, "patterns": [["select", "select"], ["drop", "drop"], ["; drop ", "drop"], "--"], "user": null}, "source": "mary-v5-security"}
+2026-05-15 22:02:06,426 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:06.426993", "event_type": "security", "severity": "security", "category": "sql_injection_attempt", "correlation_id": null, "details": {"query": "SELECT * FROM users WHERE id = 1; DROP TABLE users; --", "risk_score": 50, "patterns": [["select", "select"], ["drop", "drop"], ["; drop ", "drop"], "--"], "user": null}, "source": "mary-v5-security"}
+2026-05-15 22:02:06,510 - mary_v5 - INFO - IP reputation filter initialized | {'enabled': True}
+2026-05-15 22:02:06,510 - mary_v5 - INFO - Request fingerprinter initialized | {'enabled': True}
+2026-05-15 22:02:06,510 - mary_v5 - INFO - Threat scoring engine initialized | {'enabled': True}
+2026-05-15 22:02:06,510 - mary_v5 - INFO - Advanced rate limiter initialized | {'enabled': True}
+2026-05-15 22:02:06,510 - mary_v5 - INFO - Advanced security middleware initialized | {'enabled': True}
+2026-05-15 22:02:06,560 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 22:02:06,560 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 22:02:06,560 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 22:02:20,627 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:20.627055", "event_type": "security", "severity": "security", "category": "ransomware_detected", "correlation_id": null, "details": {"threat_id": "ransomware_note_1778896940", "type": "ransomware", "severity": "high", "description": "Ransomware note detected: C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\share\\doc\\yt_dlp\\README.txt", "confidence": 0.85, "evidence": {"note_path": "C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\share\\doc\\yt_dlp\\README.txt", "file_name": "README.txt"}}, "source": "mary-v5-security"}
+2026-05-15 22:02:20,627 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:20.627055", "event_type": "security", "severity": "security", "category": "ransomware_detected", "correlation_id": null, "details": {"threat_id": "ransomware_note_1778896940", "type": "ransomware", "severity": "high", "description": "Ransomware note detected: C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\share\\doc\\yt_dlp\\README.txt", "confidence": 0.85, "evidence": {"note_path": "C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\share\\doc\\yt_dlp\\README.txt", "file_name": "README.txt"}}, "source": "mary-v5-security"}
+2026-05-15 22:02:22,443 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:22.443655", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_3592_1778896942", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 3592, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"], "cpu_percent": 0.0, "memory_percent": 0.33739387239555085}}, "source": "mary-v5-security"}
+2026-05-15 22:02:22,443 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:22.443655", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_3592_1778896942", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 3592, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"], "cpu_percent": 0.0, "memory_percent": 0.33739387239555085}}, "source": "mary-v5-security"}
+2026-05-15 22:02:22,443 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:22.443655", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_3616_1778896942", "type": "malware", "severity": "high", "description": "Suspicious process activity: cmd.exe", "confidence": 0.8, "evidence": {"process_name": "cmd.exe", "pid": 3616, "cmdline": ["C:\\Windows\\system32\\cmd.exe", "/C", "set", "PATH=C:\\Users\\HP\\AppData\\Local\\Programs\\Ollama;%PATH%", "&", "C:\\Users\\HP\\AppData\\Local\\Programs\\Ollama\\ollama app.exe"], "cpu_percent": 0.0, "memory_percent": 0.015466082704877263}}, "source": "mary-v5-security"}
+2026-05-15 22:02:22,443 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:22.443655", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_3616_1778896942", "type": "malware", "severity": "high", "description": "Suspicious process activity: cmd.exe", "confidence": 0.8, "evidence": {"process_name": "cmd.exe", "pid": 3616, "cmdline": ["C:\\Windows\\system32\\cmd.exe", "/C", "set", "PATH=C:\\Users\\HP\\AppData\\Local\\Programs\\Ollama;%PATH%", "&", "C:\\Users\\HP\\AppData\\Local\\Programs\\Ollama\\ollama app.exe"], "cpu_percent": 0.0, "memory_percent": 0.015466082704877263}}, "source": "mary-v5-security"}
+2026-05-15 22:02:22,662 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:22.662770", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_13308_1778896942", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 13308, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-noexit", "-command", "try { . \"c:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\0958016b2a\\resources\\app\\out\\vs\\workbench\\contrib\\terminal\\common\\scripts\\shellIntegration.ps1\" } catch {}"], "cpu_percent": 0.0, "memory_percent": 0.31235735214912247}}, "source": "mary-v5-security"}
+2026-05-15 22:02:22,662 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:22.662770", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_13308_1778896942", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 13308, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-noexit", "-command", "try { . \"c:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\0958016b2a\\resources\\app\\out\\vs\\workbench\\contrib\\terminal\\common\\scripts\\shellIntegration.ps1\" } catch {}"], "cpu_percent": 0.0, "memory_percent": 0.31235735214912247}}, "source": "mary-v5-security"}
+2026-05-15 22:02:22,662 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:22.662770", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_13936_1778896942", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 13936, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-noexit", "-command", "try { . \"c:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\0958016b2a\\resources\\app\\out\\vs\\workbench\\contrib\\terminal\\common\\scripts\\shellIntegration.ps1\" } catch {}"], "cpu_percent": 0.0, "memory_percent": 0.34685246842993855}}, "source": "mary-v5-security"}
+2026-05-15 22:02:22,662 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:22.662770", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_13936_1778896942", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 13936, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-noexit", "-command", "try { . \"c:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\0958016b2a\\resources\\app\\out\\vs\\workbench\\contrib\\terminal\\common\\scripts\\shellIntegration.ps1\" } catch {}"], "cpu_percent": 0.0, "memory_percent": 0.34685246842993855}}, "source": "mary-v5-security"}
+2026-05-15 22:02:22,676 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:22.676968", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_16248_1778896942", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 16248, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-NoProfile", "-Command", "Set-Location -Path 'C:\\Users\\HP\\Desktop\\BACKUP_MARY_V5'; python -m pytest tests/test_security.py -q"], "cpu_percent": 0.0, "memory_percent": 0.23988405550725958}}, "source": "mary-v5-security"}
+2026-05-15 22:02:22,676 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:22.676968", "event_type": "security", "severity": "security", "category": "malware_detected", "correlation_id": null, "details": {"threat_id": "malware_proc_16248_1778896942", "type": "malware", "severity": "high", "description": "Suspicious process activity: powershell.exe", "confidence": 0.8, "evidence": {"process_name": "powershell.exe", "pid": 16248, "cmdline": ["C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "-NoProfile", "-Command", "Set-Location -Path 'C:\\Users\\HP\\Desktop\\BACKUP_MARY_V5'; python -m pytest tests/test_security.py -q"], "cpu_percent": 0.0, "memory_percent": 0.23988405550725958}}, "source": "mary-v5-security"}
+2026-05-15 22:02:23,893 - mary_v5 - INFO - IP reputation filter initialized | {'enabled': True}
+2026-05-15 22:02:23,893 - mary_v5 - INFO - Request fingerprinter initialized | {'enabled': True}
+2026-05-15 22:02:23,893 - mary_v5 - INFO - Threat scoring engine initialized | {'enabled': True}
+2026-05-15 22:02:23,893 - mary_v5 - INFO - Advanced rate limiter initialized | {'enabled': True}
+2026-05-15 22:02:23,893 - mary_v5 - INFO - Advanced security middleware initialized | {'enabled': True}
+2026-05-15 22:02:23,993 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 22:02:23,993 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 22:02:23,993 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 22:02:23,993 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 22:02:24,093 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 22:02:24,093 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 22:02:24,093 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 22:02:24,093 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 22:02:24,093 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:24.093146", "event_type": "audit", "severity": "audit", "action": "database_operation", "user": "test", "resource": "SELECT:users", "result": "success", "details": {"operation": "SELECT", "table": "users", "affected_rows": 1, "risk_level": "high"}, "correlation_id": null, "source": "mary-v5-audit"}
+2026-05-15 22:02:24,093 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:24.093146", "event_type": "audit", "severity": "audit", "action": "database_operation", "user": "test", "resource": "SELECT:users", "result": "success", "details": {"operation": "SELECT", "table": "users", "affected_rows": 1, "risk_level": "high"}, "correlation_id": null, "source": "mary-v5-audit"}
+2026-05-15 22:02:24,093 - mary_v5_console_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:24.093146", "event_type": "security", "severity": "security", "category": "suspicious_database_operation", "correlation_id": null, "details": {"operation": "SELECT", "table": "users", "user": "test", "affected_rows": 1, "query": "SELECT * FROM users WHERE name = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'"}, "source": "mary-v5-security"}
+2026-05-15 22:02:24,093 - mary_v5_file_2834910639760 - INFO - {"timestamp": "2026-05-16T02:02:24.093146", "event_type": "security", "severity": "security", "category": "suspicious_database_operation", "correlation_id": null, "details": {"operation": "SELECT", "table": "users", "user": "test", "affected_rows": 1, "query": "SELECT * FROM users WHERE name = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'"}, "source": "mary-v5-security"}
+2026-05-15 22:02:56,454 - core.simplified_core - INFO - Simplified core initialized
+2026-05-15 22:02:56,804 - mary_v5 - INFO - Centralized logging initialized | {'enabled': True, 'outputs': ['console', 'file']}
+2026-05-15 22:02:56,822 - mary_v5 - INFO - Ransomware detector initialized | {'enabled': True}
+2026-05-15 22:02:56,822 - mary_v5 - INFO - Malware detector initialized | {'enabled': True}
+2026-05-15 22:02:56,822 - mary_v5 - INFO - Threat detection engine initialized | {'enabled': True}
+2026-05-15 22:02:56,822 - mary_v5 - INFO - Device fingerprinting initialized | {'enabled': True}
+2026-05-15 22:02:56,822 - mary_v5 - INFO - Token rotation manager initialized | {'enabled': True}
+2026-05-15 22:02:56,822 - mary_v5 - INFO - Continuous validator initialized | {'enabled': True}
+2026-05-15 22:02:56,822 - mary_v5 - INFO - Zero-trust auth manager initialized | {'enabled': True}
+2026-05-15 22:02:56,922 - mary_v5 - INFO - Field encryption initialized | {'enabled': True}
+2026-05-15 22:02:56,922 - mary_v5 - INFO - SQL injection detector initialized | {'enabled': True}
+2026-05-15 22:02:56,922 - mary_v5 - INFO - Database auditor initialized | {'enabled': True}
+2026-05-15 22:02:56,922 - mary_v5 - INFO - Database security manager initialized | {'enabled': True}
+2026-05-15 22:02:56,922 - mary_v5 - INFO - Structured logger initialized | {'enabled': True}
+2026-05-15 22:02:56,922 - mary_v5 - INFO - Audit manager initialized | {'enabled': True}
+2026-05-15 22:02:56,922 - mary_v5 - INFO - Health check manager initialized | {'enabled': True}
+2026-05-15 22:02:56,922 - mary_v5 - INFO - Enterprise manager initialized | {'enabled': True}
+2026-05-15 22:02:56,937 - mary_v5 - INFO - IP reputation filter initialized | {'enabled': True}
+2026-05-15 22:02:56,937 - mary_v5 - INFO - Request fingerprinter initialized | {'enabled': True}

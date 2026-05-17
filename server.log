@@ -1,0 +1,12 @@
+INFO:     127.0.0.1:50345 - "GET /health/live HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50345 - "POST /api/v1/assistant/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50559 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50559 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50560 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50562 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50562 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50587 - "POST /api/v1/assistant/chat HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50588 - "POST /api/v1/assistant/chat HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50590 - "POST /api/v1/assistant/chat HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50591 - "POST /api/v1/assistant/chat HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50592 - "POST /api/v1/assistant/chat HTTP/1.1" 500 Internal Server Error

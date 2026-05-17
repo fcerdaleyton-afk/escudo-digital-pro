@@ -1,0 +1,438 @@
+# MARY V5 SHIELD CORE v5.0 Enterprise - Alert Rules
+# Comprehensive alerting rules for enterprise security platform
+
+groups:
+  # ============================================
+  # Application Health Alerts
+  # ============================================
+  - name: application_health
+    rules:
+      - alert: ApplicationDown
+        expr: up{job="mary-v5-application"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: mary-v5-application
+          component: application
+        annotations:
+          summary: "MARY V5 Application is down"
+          description: "MARY V5 SHIELD CORE application has been down for more than 1 minute"
+          runbook_url: "https://docs.escudo-digital.com/runbook#application-down"
+          dashboard_url: "https://grafana.escudo-digital.com/d/application-overview"
+
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-application
+          component: application
+        annotations:
+          summary: "High error rate detected"
+          description: "Error rate is {{ $value | humanizePercentage }} over the last 5 minutes"
+          runbook_url: "https://docs.escudo-digital.com/runbook#high-error-rate"
+
+      - alert: HighResponseTime
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 2
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-application
+          component: application
+        annotations:
+          summary: "High response time detected"
+          description: "95th percentile response time is {{ $value }}s over the last 5 minutes"
+          runbook_url: "https://docs.escudo-digital.com/runbook#high-response-time"
+
+      - alert: LowThroughput
+        expr: rate(http_requests_total[5m]) < 10
+        for: 10m
+        labels:
+          severity: warning
+          service: mary-v5-application
+          component: application
+        annotations:
+          summary: "Low throughput detected"
+          description: "Request rate is {{ $value }} requests/second over the last 5 minutes"
+          runbook_url: "https://docs.escudo-digital.com/runbook#low-throughput"
+
+  # ============================================
+  # Security Alerts
+  # ============================================
+  - name: security_alerts
+    rules:
+      - alert: HighThreatCount
+        expr: security_threats_total > 100
+        for: 2m
+        labels:
+          severity: critical
+          service: mary-v5-security
+          component: security
+        annotations:
+          summary: "High number of security threats detected"
+          description: "{{ $value }} security threats detected in the last 5 minutes"
+          runbook_url: "https://docs.escudo-digital.com/runbook#high-threat-count"
+
+      - alert: SecurityBreachDetected
+        expr: security_breach_detected == 1
+        for: 0m
+        labels:
+          severity: critical
+          service: mary-v5-security
+          component: security
+        annotations:
+          summary: "Security breach detected"
+          description: "A security breach has been detected and requires immediate attention"
+          runbook_url: "https://docs.escudo-digital.com/runbook#security-breach"
+
+      - alert: SuspiciousActivity
+        expr: rate(suspicious_requests_total[5m]) > 10
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-security
+          component: security
+        annotations:
+          summary: "Suspicious activity detected"
+          description: "{{ $value }} suspicious requests per second detected"
+          runbook_url: "https://docs.escudo-digital.com/runbook#suspicious-activity"
+
+      - alert: AuthenticationFailure
+        expr: rate(authentication_failures_total[5m]) > 5
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-security
+          component: security
+        annotations:
+          summary: "High authentication failure rate"
+          description: "{{ $value }} authentication failures per second detected"
+          runbook_url: "https://docs.escudo-digital.com/runbook#authentication-failure"
+
+  # ============================================
+  # Database Alerts
+  # ============================================
+  - name: database_health
+    rules:
+      - alert: DatabaseDown
+        expr: up{job="postgres-exporter"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: mary-v5-database
+          component: postgres
+        annotations:
+          summary: "PostgreSQL database is down"
+          description: "PostgreSQL database has been down for more than 1 minute"
+          runbook_url: "https://docs.escudo-digital.com/runbook#database-down"
+
+      - alert: DatabaseConnectionsHigh
+        expr: pg_stat_database_numbackends / pg_settings_max_connections > 0.8
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-database
+          component: postgres
+        annotations:
+          summary: "High database connection usage"
+          description: "{{ $value | humanizePercentage }} of database connections are in use"
+          runbook_url: "https://docs.escudo-digital.com/runbook#database-connections-high"
+
+      - alert: DatabaseSlowQueries
+        expr: rate(pg_stat_statement_calls_total[5m]) > 100
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-database
+          component: postgres
+        annotations:
+          summary: "Database slow queries detected"
+          description: "{{ $value }} slow queries per second detected"
+          runbook_url: "https://docs.escudo-digital.com/runbook#database-slow-queries"
+
+      - alert: DatabaseReplicationLag
+        expr: pg_replication_lag_seconds > 300
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-database
+          component: postgres
+        annotations:
+          summary: "Database replication lag detected"
+          description: "Replication lag is {{ $value }} seconds"
+          runbook_url: "https://docs.escudo-digital.com/runbook#database-replication-lag"
+
+  # ============================================
+  # Redis Alerts
+  # ============================================
+  - name: redis_health
+    rules:
+      - alert: RedisDown
+        expr: up{job="redis-exporter"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: mary-v5-cache
+          component: redis
+        annotations:
+          summary: "Redis is down"
+          description: "Redis has been down for more than 1 minute"
+          runbook_url: "https://docs.escudo-digital.com/runbook#redis-down"
+
+      - alert: RedisMemoryHigh
+        expr: redis_memory_used_bytes / redis_memory_max_bytes > 0.9
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-cache
+          component: redis
+        annotations:
+          summary: "Redis memory usage high"
+          description: "Redis memory usage is {{ $value | humanizePercentage }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#redis-memory-high"
+
+      - alert: RedisConnectionsHigh
+        expr: redis_connected_clients > 1000
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-cache
+          component: redis
+        annotations:
+          summary: "High Redis connections"
+          description: "{{ $value }} Redis connections are active"
+          runbook_url: "https://docs.escudo-digital.com/runbook#redis-connections-high"
+
+      - alert: RedisKeyEviction
+        expr: increase(redis_evicted_keys_total[5m]) > 0
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-cache
+          component: redis
+        annotations:
+          summary: "Redis key eviction detected"
+          description: "{{ $value }} keys have been evicted in the last 5 minutes"
+          runbook_url: "https://docs.escudo-digital.com/runbook#redis-key-eviction"
+
+  # ============================================
+  # System Resource Alerts
+  # ============================================
+  - name: system_resources
+    rules:
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-system
+          component: cpu
+        annotations:
+          summary: "High CPU usage detected"
+          description: "CPU usage is {{ $value }}% on instance {{ $labels.instance }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#high-cpu-usage"
+
+      - alert: HighMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-system
+          component: memory
+        annotations:
+          summary: "High memory usage detected"
+          description: "Memory usage is {{ $value }}% on instance {{ $labels.instance }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#high-memory-usage"
+
+      - alert: DiskSpaceLow
+        expr: (1 - (node_filesystem_avail_bytes{fstype!="tmpfs"} / node_filesystem_size_bytes{fstype!="tmpfs"})) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-system
+          component: disk
+        annotations:
+          summary: "Low disk space"
+          description: "Disk usage is {{ $value }}% on {{ $labels.instance }}:{{ $labels.mountpoint }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#disk-space-low"
+
+      - alert: HighDiskIO
+        expr: irate(node_disk_io_time_seconds_total[5m]) * 100 > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-system
+          component: disk
+        annotations:
+          summary: "High disk I/O"
+          description: "Disk I/O is {{ $value }}% on {{ $labels.instance }}:{{ $labels.device }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#high-disk-io"
+
+  # ============================================
+  # Network Alerts
+  # ============================================
+  - name: network_health
+    rules:
+      - alert: HighNetworkTraffic
+        expr: irate(node_network_receive_bytes_total[5m]) + irate(node_network_transmit_bytes_total[5m]) > 100000000
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-network
+          component: network
+        annotations:
+          summary: "High network traffic"
+          description: "Network traffic is {{ $value | humanizeBytes }}/s on {{ $labels.instance }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#high-network-traffic"
+
+      - alert: NetworkConnectionErrors
+        expr: increase(node_netstat_Tcp_CurrEstab[5m]) < 0
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-network
+          component: network
+        annotations:
+          summary: "Network connection errors"
+          description: "Network connection errors detected on {{ $labels.instance }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#network-connection-errors"
+
+  # ============================================
+  # Container Health Alerts
+  # ============================================
+  - name: container_health
+    rules:
+      - alert: ContainerDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: mary-v5-containers
+          component: docker
+        annotations:
+          summary: "Container is down"
+          description: "Container {{ $labels.instance }} has been down for more than 1 minute"
+          runbook_url: "https://docs.escudo-digital.com/runbook#container-down"
+
+      - alert: ContainerRestarting
+        expr: increase(container_start_time_seconds[5m]) > 3
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-containers
+          component: docker
+        annotations:
+          summary: "Container restarting frequently"
+          description: "Container {{ $labels.instance }} has restarted {{ $value }} times in the last 5 minutes"
+          runbook_url: "https://docs.escudo-digital.com/runbook#container-restarting"
+
+      - alert: ContainerHighMemory
+        expr: container_memory_usage_bytes / container_spec_memory_limit_bytes > 0.9
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-containers
+          component: docker
+        annotations:
+          summary: "Container memory usage high"
+          description: "Container {{ $labels.instance }} memory usage is {{ $value | humanizePercentage }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#container-high-memory"
+
+  # ============================================
+  # SSL Certificate Alerts
+  # ============================================
+  - name: ssl_certificates
+    rules:
+      - alert: SSLCertificateExpiring
+        expr: probe_ssl_earliest_cert_expiry - time() < 86400 * 30
+        for: 1m
+        labels:
+          severity: warning
+          service: mary-v5-ssl
+          component: certificate
+        annotations:
+          summary: "SSL certificate expiring soon"
+          description: "SSL certificate for {{ $labels.instance }} expires in {{ $value | humanizeDuration }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#ssl-certificate-expiring"
+
+      - alert: SSLCertificateExpired
+        expr: probe_ssl_earliest_cert_expiry - time() < 0
+        for: 1m
+        labels:
+          severity: critical
+          service: mary-v5-ssl
+          component: certificate
+        annotations:
+          summary: "SSL certificate expired"
+          description: "SSL certificate for {{ $labels.instance }} has expired"
+          runbook_url: "https://docs.escudo-digital.com/runbook#ssl-certificate-expired"
+
+  # ============================================
+  # Backup Alerts
+  # ============================================
+  - name: backup_health
+    rules:
+      - alert: BackupFailed
+        expr: backup_last_success == 0
+        for: 1h
+        labels:
+          severity: critical
+          service: mary-v5-backup
+          component: backup
+        annotations:
+          summary: "Backup failed"
+          description: "Last backup failed for {{ $labels.instance }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#backup-failed"
+
+      - alert: BackupOld
+        expr: time() - backup_last_success_timestamp > 86400 * 2
+        for: 1h
+        labels:
+          severity: warning
+          service: mary-v5-backup
+          component: backup
+        annotations:
+          summary: "Backup is old"
+          description: "Last successful backup was {{ $value | humanizeDuration }} ago"
+          runbook_url: "https://docs.escudo-digital.com/runbook#backup-old"
+
+  # ============================================
+  # Performance Alerts
+  # ============================================
+  - name: performance_metrics
+    rules:
+      - alert: SlowDatabaseQueries
+        expr: histogram_quantile(0.95, rate(sql_query_duration_seconds_bucket[5m])) > 2
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-performance
+          component: database
+        annotations:
+          summary: "Slow database queries"
+          description: "95th percentile query time is {{ $value }}s"
+          runbook_url: "https://docs.escudo-digital.com/runbook#slow-database-queries"
+
+      - alert: CacheMissRateHigh
+        expr: rate(cache_misses_total[5m]) / (rate(cache_hits_total[5m]) + rate(cache_misses_total[5m])) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-performance
+          component: cache
+        annotations:
+          summary: "High cache miss rate"
+          description: "Cache miss rate is {{ $value | humanizePercentage }}"
+          runbook_url: "https://docs.escudo-digital.com/runbook#cache-miss-rate-high"
+
+      - alert: QueueBacklog
+        expr: queue_size > 1000
+        for: 5m
+        labels:
+          severity: warning
+          service: mary-v5-performance
+          component: queue
+        annotations:
+          summary: "Queue backlog detected"
+          description: "Queue size is {{ $value }} items"
+          runbook_url: "https://docs.escudo-digital.com/runbook#queue-backlog"

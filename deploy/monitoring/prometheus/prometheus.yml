@@ -1,0 +1,331 @@
+# MARY V5 SHIELD CORE v5.0 Enterprise - Prometheus Configuration
+# Comprehensive monitoring configuration for enterprise security platform
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'mary-v5-production'
+    environment: 'production'
+    region: 'us-east-1'
+
+# ============================================
+# Alerting Configuration
+# ============================================
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+      timeout: 10s
+      api_version: v2
+      http_config:
+        tls_config:
+          insecure_skip_verify: true
+
+# ============================================
+# Rule Files
+# ============================================
+rule_files:
+  - "/etc/prometheus/rules/alerts.yml"
+  - "/etc/prometheus/rules/recording.yml"
+
+# ============================================
+# Scrape Configurations
+# ============================================
+scrape_configs:
+  # ============================================
+  # Prometheus Self-Monitoring
+  # ============================================
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+
+  # ============================================
+  # MARY V5 Application Metrics
+  # ============================================
+  - job_name: 'mary-v5-application'
+    static_configs:
+      - targets: ['mary-v5-shield:8000']
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+    params:
+      format: ['prometheus']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'mary-v5-shield'
+      - source_labels: [__meta_kubernetes_pod_name]
+        target_label: pod
+        regex: '(.+)'
+      - source_labels: [__meta_kubernetes_pod_label_app]
+        target_label: service
+        regex: '(.+)'
+
+  # ============================================
+  # Node Exporter - System Metrics
+  # ============================================
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: 
+        - 'node-exporter:9100'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'mary-v5-node'
+
+  # ============================================
+  # PostgreSQL Exporter
+  # ============================================
+  - job_name: 'postgres-exporter'
+    static_configs:
+      - targets: ['postgres-exporter:9187']
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'mary-v5-postgres'
+
+  # ============================================
+  # Redis Exporter
+  # ============================================
+  - job_name: 'redis-exporter'
+    static_configs:
+      - targets: ['redis-exporter:9121']
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'mary-v5-redis'
+
+  # ============================================
+  # Nginx Exporter
+  # ============================================
+  - job_name: 'nginx-exporter'
+    static_configs:
+      - targets: ['nginx-exporter:9113']
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'mary-v5-nginx'
+
+  # ============================================
+  # Docker Container Metrics
+  # ============================================
+  - job_name: 'docker-container-exporter'
+    static_configs:
+      - targets: ['docker-exporter:9323']
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+
+  # ============================================
+  # Blackbox Exporter - Endpoint Monitoring
+  # ============================================
+  - job_name: 'blackbox-http'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+        - http://localhost:8000/health
+        - https://escudo-digital.com/health
+        - https://api.escudo-digital.com/health
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox-exporter:9115
+
+  - job_name: 'blackbox-tcp'
+    metrics_path: /probe
+    params:
+      module: [tcp_connect]
+    static_configs:
+      - targets:
+        - localhost:8000
+        - localhost:5432
+        - localhost:6379
+        - localhost:443
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox-exporter:9115
+
+  # ============================================
+  # Process Exporter
+  # ============================================
+  - job_name: 'process-exporter'
+    static_configs:
+      - targets: ['process-exporter:9256']
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+
+  # ============================================
+  # Custom Business Metrics
+  # ============================================
+  - job_name: 'mary-v5-business-metrics'
+    static_configs:
+      - targets: ['mary-v5-shield:8000']
+    scrape_interval: 60s
+    scrape_timeout: 15s
+    metrics_path: /business-metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+    params:
+      format: ['prometheus']
+
+  # ============================================
+  # Security Metrics
+  # ============================================
+  - job_name: 'mary-v5-security-metrics'
+    static_configs:
+      - targets: ['mary-v5-shield:8000']
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    metrics_path: /security-metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+    params:
+      format: ['prometheus']
+
+  # ============================================
+  # Performance Metrics
+  # ============================================
+  - job_name: 'mary-v5-performance-metrics'
+    static_configs:
+      - targets: ['mary-v5-shield:8000']
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: /performance-metrics
+    scheme: http
+    honor_labels: true
+    honor_timestamps: true
+    params:
+      format: ['prometheus']
+
+# ============================================
+# Remote Write Configuration (for long-term storage)
+# ============================================
+# remote_write:
+#   - url: "https://prometheus-remote-write.example.com/api/v1/write"
+#     basic_auth:
+#       username: "user"
+#       password: "password"
+#     queue_config:
+#       max_samples_per_send: 1000
+#       max_shards: 200
+#       capacity: 2500
+
+# ============================================
+# Remote Read Configuration (for federated queries)
+# ============================================
+# remote_read:
+#   - url: "https://prometheus-remote-read.example.com/api/v1/read"
+#     read_recent: true
+#     basic_auth:
+#       username: "user"
+#       password: "password"
+
+# ============================================
+# Storage Configuration
+# ============================================
+storage:
+  tsdb:
+    path: /prometheus
+    retention.time: 15d
+    retention.size: 10GB
+    wal:
+      compression: true
+      dir: /prometheus/wal
+
+# ============================================
+# Web Configuration
+# ============================================
+web:
+  enable_admin_api: false
+  enable_lifecycle: true
+  page_title: "MARY V5 SHIELD CORE - Prometheus"
+  cors:
+    origins: ["https://grafana.escudo-digital.com"]
+    credentials: same_origin
+
+# ============================================
+# Feature Flags
+# ============================================
+# enable_features:
+#   - exemplar-storage
+#   - remote-write-receiver
+#   - promql-at-modifier
+#   - extra-scrape-metrics
+
+# ============================================
+# Query Configuration
+# ============================================
+query:
+  max_concurrency: 20
+  max_samples: 50000000
+  timeout: 2m
+  lookback-delta: 5m
+
+# ============================================
+# Tracing Configuration
+# ============================================
+# tracing:
+#   type: jaeger
+#   endpoint: "http://jaeger:14268/api/traces"
+
+# ============================================
+# Runtime Configuration
+# ============================================
+runtime:
+  gogc: 50
+  gomaxprocs: 4
+  allow-compaction: true
+  compaction-compression: true

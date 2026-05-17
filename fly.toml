@@ -1,18 +1,63 @@
-# fly.toml app configuration file for escudo-digital-pro
+# ============================================
+# FLY.IO - ESCUDO DIGITAL MARY V5
+# Configuración para entorno comercial/bancario
+# ============================================
 
 app = 'escudo-digital-pro'
 primary_region = 'gru'
 
 [build]
 
+# ============================================
+# SERVICIO HTTP
+# ============================================
+
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = true
+  
+  # CRÍTICO: Mínimo 1 máquina siempre activa para disponibilidad 24/7
+  auto_stop_machines = false
   auto_start_machines = true
-  min_machines_running = 0
+  min_machines_running = 1
+
+# ============================================
+# RECURSOS DE MÁQUINA
+# ============================================
 
 [[vm]]
-  memory = '256mb'
+  memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1
+
+# ============================================
+# SECRETOS (NO van en este archivo, se inyectan por CLI)
+# fly secrets set TOKEN_ENCRYPTION_KEY=tu_clave_secreta
+# fly secrets set POSTGRES_PASSWORD=tu_password
+# ============================================
+
+# ============================================
+# HEALTH CHECKS (Monitoreo de salud)
+# ============================================
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 8080
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+    force_https = true
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  # Health check cada 10 segundos
+  [[services.http_checks]]
+    interval = "10s"
+    timeout = "2s"
+    grace_period = "5s"
+    method = "get"
+    path = "/health/live"
+    protocol = "http"
